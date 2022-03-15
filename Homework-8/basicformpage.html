@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style>
+            span {
+                color: blue;
+            }
+        </style>
+
+        <script>
+            function validationRegForm() {
+                var userName = document.forms["myForm"]["uName"].value;
+
+                var password = document.forms["myForm"]["pass"].value;
+
+                var rePassword = document.forms["myForm"]["rePass"].value;
+
+                var firstName = document.forms["myForm"]["fName"].value;
+
+                var passMat = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$";
+
+                if (userName == "") {
+                    document.getElementById("usrName").focus();
+
+                    var x = document.getElementById("usrName");
+
+                    x.style.backgroundColor = "#ffcccb";
+
+                    document.getElementById("span1").innerHTML = "Required Field";
+
+                    return false;
+                }
+
+                if (userName.length < 6 || userName.length > 50) {
+                    document.getElementById("span1").innerHTML = "Max length 50 characters, Minimum lenght 6 characters";
+
+                    return false;
+                }
+
+                if (password == "") {
+                    document.getElementById("usrPass").focus();
+
+                    var x = document.getElementById("usrPass");
+
+                    x.style.backgroundColor = "#ffcccb";
+
+                    document.getElementById("span2").innerHTML = "Required Field";
+
+                    document.getElementById("span1").innerHTML = "";
+
+                    return false;
+                }
+
+                if (password.length < 8 || password.length > 50) {
+                    document.getElementById("span2").innerHTML = "Minimum length 8 characters,Maximum length 50 characters";
+
+                    document.getElementById("span1").innerHTML = "";
+
+                    return false;
+                }
+
+                if (!password.match(passMat)) {
+                    document.getElementById("span2").innerHTML = "Required 1 capital, 1 lowercase, 1 digit, 1 special character";
+
+                    document.getElementById("span1").innerHTML = "";
+
+                    return false;
+                }
+
+                if (rePassword == "") {
+                    document.getElementById("repPass").focus();
+
+                    var x = document.getElementById("repPass");
+
+                    x.style.backgroundColor = "#ffcccb";
+
+                    document.getElementById("span3").innerHTML = "Required Field";
+
+                    document.getElementById("span2").innerHTML = "";
+
+                    return false;
+                }
+
+                if (rePassword != password) {
+                    document.getElementById("span3").innerHTML = "password not match*";
+
+                    document.getElementById("span2").innerHTML = "";
+
+                    return false;
+                }
+
+                if (firstName == "") {
+                    document.getElementById("repPass").focus();
+
+                    var el = document.getElementById("repPass");
+
+                    el.style.backgroundColor = "#ffcccb";
+
+                    document.getElementById("span4").innerHTML = "Required Field";
+
+                    document.getElementById("span3").innerHTML = "";
+
+                    return false;
+                }
+
+                if (firstName >= 50) {
+                    document.getElementById("span4").innerHTML = "Max length 50 characters";
+
+                    document.getElementById("span3").innerHTML = "";
+
+                    return false;
+                } else {
+                    alert("Form submission is a success!");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>About Basic - Inquiries</h1>
+
+        <a href="./index.html">Home</a>
+
+        <a href="./basicgallerypage.html">Gallery</a>
+
+        <a href="./basicformpage.html">Form</a>
+
+        <a href="./basicmathgame.html">Math Game</a>
+
+        <h2>Validation Rules Registration Fields:</h2>
+
+        <form id="regForm" name="myForm" onsubmit="return validationRegForm()" method="post">
+            Name: <input type="text" name="uName" id="usrName" /><span id="span1"></span><br />
+            <br />
+
+            Password: <input type="password" name="pass" id="usrPass" /><span id="span2"></span><br />
+            <br />
+
+            Repeat Password: <input type="password" name="rePass" id="repPass" /><span id="span3"></span><br />
+            <br />
+
+            Email: <input type="text" name="fName" id="fstName" /><span id="span4"></span><br />
+            <br />
+
+            <label for="">Do accept the terms of agreement?</label><br />
+
+            <input type="checkbox" id="" name="" value="" />
+
+            <label for="">Accept</label><br />
+
+            <input type="checkbox" id="" name="" value="" />
+
+            <label for="">Decline</label><br />
+
+            <input type="reset" value="Reset" />
+
+            <input type="submit" value="Submit" />
+        </form>
+
+        <script>
+            function focusInput() {
+                document.getElementById("span4").focus();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+﻿/* CSS files add styling rules to your content */
+
+p {
+  	
+}
+
+.h1Format {
+	color:blue;
+}
+
+.h2Format {
+	color:lightblue;
+}
+
+.bodyFormat {
+	font-size:50%;
+}
+
+.span {
+	color:blue;
+}
+
+a:link {
+	color: rbg(6,69,173);
+	text-decoration: none;
+}
+
+a:visited {
+	color: rbg(11,0,128);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	color: rbg(250,167,0);
+}
+
+table { 
+	width: 700px;
+ }
+
+table, td {
+	text-align: center;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+#first {
+	background-color: none;
+}
+
+#second {
+	background-color: none;
+}
+
+#header {
+	background-color: none;
+	border: none;
+	padding: 5px;
+	margin: 5px;
+	text-align: center;
+}
+
+#navbar {
+	background-color: none;
+	height: 200px;
+	width: 100px;
+	float: left;
+	border: 1px solid brown;
+	padding: 5px;
+	margin: 5px;
+	text-align: left;
+}
+
+#content {
+	background-color: none;
+	height: 412px;
+	width: 412px;
+	float: left;
+	border: 1px solid brown;
+	padding: 5px;
+	margin: 5px;
+	text-align: left;
+}
+
+#footer {
+	background-color: none;
+	clear: both;
+	text-align: center;
+	border: none;
+	padding: 5px;
+	margin: 5px;
+	
+}
+
+#secondUnorderedList {
+	list-style-type: none;
+	line-height: 25px;
+	padding: 5px;	
+}
+
+/* Math Game Page */
+

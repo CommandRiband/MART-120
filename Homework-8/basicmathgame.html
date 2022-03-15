@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multiplication Maths</title>
+<script>
+var ans;
+var Qcount=1;
+var Rcount=1;
+function checkAnswer() 
+{
+   if(Qcount<=10)
+   {
+        if(!(ans==document.getElementById("answer").value))
+        {
+                document.getElementById("msg").innerHTML = "No. Please try again.";
+                 setTimeout(newQuestion,1000);
+        }
+        else
+        {
+             
+                 document.getElementById("msg").innerHTML = "It is correct!, very good! ";
+                 setTimeout(newQuestion,1000);
+                 Rcount++;
+                 
+        }
+  }
+  else
+  { 
+      wrong=10-Rcount;
+          per=(Rcount*100)/10;
+      document.getElementById("rcount").innerHTML = "Right Answered: "+Rcount+"<br>Wrong Answered: "+wrong;
+      document.getElementById("per").innerHTML ="Percentage: "+per;
+          document.getElementById("newque").disabled = true;
+  }
+}
+function newQuestion() 
+{
+
+
+        var a = Math.floor(Math.random() * 11)+1;
+        var b = Math.floor(Math.random() * 11)+1;
+        document.getElementById("question").innerHTML = "What do we get if "+a+" times "+b+"?";
+        ans = a*b;
+        
+        document.getElementById("qcount").innerHTML = "Question: "+(Qcount);
+        Qcount++;
+}
+
+</script>
+</head>
+<body onload="newQuestion()">
+<h1>About Basic - Inquiries</h1>
+
+        <a href="./index.html">Home</a>
+
+        <a href="./basicgallerypage.html">Gallery</a>
+
+        <a href="./basicformpage.html">Form</a>
+
+        <a href="./basicmathgame.html">Math Game</a>
+<p id="question"></p>
+<p>Enter your answer: <input id ="answer" type = "text">
+<button type="button" onclick="checkAnswer()">Check Answer</button>
+<button type="button" onclick="newQuestion()" id="newque">New Question</button></p>
+<p id="msg"></p><br>
+<p id="qcount"></p><br>
+<p id="rcount"></p><br>
+<p id="per"></p><br>
+</body>
+</html>
