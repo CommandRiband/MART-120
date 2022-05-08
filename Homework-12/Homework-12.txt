@@ -1,0 +1,46 @@
+/* Homework 12 Results */
+
+let arrays_bugs = [];
+
+function setup() {
+  createCanvas(640, 480);
+  // For loop, arrays_bugs, constructor_class
+  for (let i = 0; i < 50; i++) {
+    arrays_bugs.push(new constructor_class());
+  }
+}
+
+function draw() {
+  background(43, 84, 138);
+  // For loop, arrays_bugs, constructor_class, move, display
+  for (let i = 0; i < arrays_bugs.length; i++) {
+    arrays_bugs[i].move();
+    arrays_bugs[i].display();
+  }
+}
+
+// Pass the function variables--x, y, size (height, width or value_of_diameter), and color--into the constructor.
+class constructor_class {
+  constructor() {
+    this.x = random(width);
+    this.y = random(height);
+    this.value_of_diameter = random(11, 31);
+    this.value_of_speed = 2;
+  }
+// Move class function
+  move() {
+    this.x += random(-this.value_of_speed, this.value_of_speed);
+    this.y += random(-this.value_of_speed, this.value_of_speed);
+  }
+// Display class function
+  display() {
+    
+    fill(22, 38, 20);
+    noStroke();
+    bezier(this.x, this.y, this.value_of_diameter, this.value_of_diameter, 0, 0, 0, 0);
+    fill(41, 71, 37);
+    rect(this.x, this.y, this.value_of_diameter, this.value_of_diameter);
+    fill(31, 54, 28);
+    ellipse(this.x, this.y, this.value_of_diameter, this.value_of_diameter);
+    }
+}
