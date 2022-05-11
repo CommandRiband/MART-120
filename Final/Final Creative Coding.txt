@@ -1,0 +1,46 @@
+// Final (Homework 16) Results
+
+// Global variables
+var a, b;
+var x = 0, y = 0;
+var score = 0;
+var side = 8;
+var r, g, b;
+
+// Functions 1 - 4
+function setup() {
+  createCanvas(640, 480);
+  }
+
+function draw() {
+  background(6, 15, 33);
+  noStroke();
+  //fill(12, 59, 245);
+  fill(115, 13, 9);
+  // Square 1
+  square(x, y, side);
+  textSize(24);
+  fill(35, 89, 168);
+  text("CLICK ON ALL SQUARES ~ HIGH SCORE > " + score, 60, 30);
+}
+
+function mousePressed() {
+  // Local variable
+  var d = dist(mouseX, mouseY, x, y);
+  // Validate mouse buttons within each square
+  if (d < side) {
+    newSquare();
+    score++;
+  }
+}
+
+function newSquare() {
+  x = random(windowWidth);
+  y = random(windowHeight);
+  r = 12;
+  g = 59;
+  b = 245;
+}
+
+// Set the interval of time between squares appearing and disappearing
+setInterval(newSquare, 1000);
